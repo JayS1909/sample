@@ -1,0 +1,43 @@
+
+////////Ass1///////////
+
+
+//Terminal 1
+
+javac *.java
+rmic AddServerImpl
+rmiregistry
+
+
+//Termnial 2
+java AddServer
+
+
+//terminal 3
+java AddClient 127.0.0.1 5 8
+
+
+////////Ass2///////////
+
+terminal 1
+
+idlj -fall ReverseModule.idl
+javac *.java ReverseModule/*.java
+orbd -ORBInitialPort 1056&
+
+//Terminal 2
+java ReverseServer -ORBInitialPort 1056& 
+
+//Terminal 3
+java ReverseClient -ORBInitialPort 1056 -ORBInitialHost localhost
+
+
+////////////assignment 3:
+gcc -fopenmp -o distributed_sum distributed_sum.c
+./distributed_sum
+
+////////Ass5///////////  
+15
+4
+3
+100

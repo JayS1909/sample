@@ -1,0 +1,153 @@
+1] jinn => refer image 
+
+2] x.500=>
+
+X.500 is a series of computer networking standards that define a global directory service for managing information about people, organizations, countries, and machines. The X.500 series was developed by the Telecommunication Standardization Sector of the International Telecommunication Union (ITU-T). 
+X.500 defines the Directory Access Protocol (DAP) for clients to use when contacting directory servers. DAP is considered a heavyweight protocol that requires a significant amount of computing resources to run. X.500 assumes the existence of an underlying OSI protocol stack.
+
+3] Middleware=>
+
+Middleware is a type of software that acts as a hidden translation layer between an operating system and applications running on it. It provides services that enable the various components of a distributed system to communicate and manage data. Middleware is especially important in modern information technology based on XML, SOAP, Web services, and service-oriented architecture
+
+
+Examples of middleware in distributed systems include message brokers like Apache Kafka or RabbitMQ, remote procedure call (RPC) frameworks like gRPC or Apache Thrift, and enterprise service buses (ESBs) like Apache Camel or MuleSoft.
+
+
+4] corba architecture=> refer image 
+
+
+object request broker (ORB)=>
+In distributed computing, an object request broker (ORB) is a concept of a middleware, which allows program calls to be made from one computer to another via a computer network, providing location transparency through remote procedure calls.
+
+
+5] SOAP and REST Diffrence 
+
+SOAP (Simple Object Access Protocol) and REST (Representational State Transfer) are both protocols used in distributed systems for communication between systems. Here's a simple and short comparison:
+
+1. SOAP:
+   - SOAP is a protocol that defines a standard for exchanging structured information in the implementation of web services.
+   - It uses XML for message formatting and typically operates over HTTP, but can also work with other protocols like SMTP or TCP.
+   - It relies heavily on XML schemas for defining message structure and WSDL (Web Services Description Language) for service description.
+   - SOAP is more rigid in its structure, with predefined rules for message formats and actions.
+
+2. REST:
+   - REST is an architectural style that uses a stateless client-server communication model.
+   - It is characterized by its lightweight nature and flexibility.
+   - RESTful APIs use standard HTTP methods (GET, POST, PUT, DELETE) to perform actions on resources identified by URLs.
+   - It typically uses simpler data formats such as JSON or XML for message formatting, although JSON is more common due to its simplicity and readability.
+   - REST APIs are more loosely coupled, allowing for easier scalability and interoperability between different systems.
+
+In summary, SOAP is more heavyweight and rigid, while REST is lightweight and flexible. REST is generally preferred for simpler, more scalable web services, while SOAP may be used in scenarios requiring more complex message structures and formal contracts.
+
+
+6] compilation steps of MPI => Tu dilele sangilte mi ani apan je kelte na video baghun mhanje MPI_HOME variable create kela te sangaycha 
+
+							basically
+							
+							step 1: install MPI express
+							step 2: set MPI PATH to user varibale
+							step 3: set MPI/bin path to system variable path 
+							
+
+
+
+
+7]Zaagix =>
+
+Zaagix is a distributed monitoring solution that offers comprehensive monitoring capabilities for networks, servers, applications, and other IT infrastructure components.
+It provides a user-friendly interface and customizable dashboards for real-time monitoring and reporting.
+Zaagix is known for its ease of setup and configuration, making it suitable for small to medium-sized businesses.
+It offers cloud-based deployment options and supports monitoring of both on-premises and cloud-based infrastructure.
+
+
+
+Nagios=>
+
+Nagios is a widely-used open-source monitoring tool that provides extensive monitoring and alerting functionalities for IT infrastructure.
+It offers a flexible architecture and plugin-based system, allowing users to monitor a wide range of devices, services, and applications.
+Nagios has a large community and ecosystem of plugins, extensions, and integrations, making it highly customizable and adaptable to various monitoring requirements.
+While Nagios can be powerful, its setup and configuration may require more expertise compared to some other monitoring solutions.
+In summary, both Zaagix and Nagios are monitoring solutions suitable for distributed systems, but Zaagix may offer a simpler setup and user experience, while Nagios provides extensive customization options and a large community ecosystem.
+
+
+
+8]BULLY & RING: for electing a co ordinate
+
+https://www.geeksforgeeks.org/difference-between-ring-and-bully-algorithm/
+
+bully: 1) every process is capable of being a co-ordinator
+	2) any process can initiate election algo (but only to those how are greater than them)
+	3) every process has a unique id
+
+
+
+9] Mutual Exclusion=>
+
+Mutual exclusion is a synchronization technique used to ensure that only one process or thread accesses a shared resource at a time.
+In distributed systems, mutual exclusion ensures that concurrent processes running on different nodes or machines cannot simultaneously access a shared resource in a conflicting manner.
+Techniques such as locks, semaphores, or distributed algorithms like the Ricart-Agrawala algorithm can be used to implement mutual exclusion in distributed systems.
+
+
+10]Deadlock=>
+
+Deadlock is a situation in which two or more processes are unable to proceed because each is waiting for the other to release a resource, resulting in a circular dependency.
+In distributed systems, deadlock can occur when multiple processes hold resources and are waiting for additional resources held by other processes.
+Deadlock prevention techniques include resource allocation strategies, deadlock detection algorithms, and deadlock avoidance techniques like banker's algorithm.
+
+
+11]RMI (Remote Method Invocation)=>
+
+RMI is a Java-specific technology that allows a Java program to invoke methods on objects running in another Java Virtual Machine (JVM), typically on different machines across a network.
+It enables distributed communication and object-oriented programming by providing a way for objects to interact across network boundaries as if they were local objects.
+RMI simplifies distributed computing in Java by abstracting away network communication and providing a high-level interface for remote method calls.
+
+
+12]RPC (Remote Procedure Call)=>
+
+RPC is a protocol that allows a computer program to execute code on a remote machine as if it were local, abstracting away the details of network communication.
+In distributed systems, RPC enables communication between processes running on different nodes by invoking procedures or functions on remote machines.
+RPC frameworks typically provide client and server libraries that handle marshalling and unmarshalling of data, as well as network communication, to facilitate remote procedure calls.
+
+
+
+13]IPC (Interprocess Communication)=>
+
+IPC refers to mechanisms and protocols used by processes to communicate and synchronize with each other within the same computer or across a network.
+In distributed systems, IPC enables communication between processes running on different nodes, facilitating data exchange and coordination.
+IPC mechanisms include message passing, shared memory, sockets, pipes, and message queues, among others, depending on the requirements and characteristics of the distributed system.
+
+
+14] Berkeley's Algorithm=>
+
+Sure, Berkeley's Algorithm is a time synchronization algorithm used in distributed systems to synchronize the clocks of multiple nodes in the network. Here's a simple explanation:
+
+1. **Initial Clock Reading**: Each node in the distributed system initially reads its local clock.
+
+2. **Coordinator Election**: One node, typically designated as the coordinator, initiates the time synchronization process. This coordinator can be chosen arbitrarily or based on some criteria such as the node with the lowest ID.
+
+3. **Coordinator Broadcasts**: The coordinator broadcasts its current local time to all other nodes in the network.
+
+4. **Clock Adjustment**: Upon receiving the time message from the coordinator, each node calculates the difference between its local clock and the received time message. Based on this difference, each node adjusts its local clock to synchronize with the coordinator's clock.
+
+5. **Round-Trip Time Estimation**: Some variations of Berkeley's Algorithm also involve estimating the round-trip time (RTT) between the coordinator and each node. This RTT estimation helps in adjusting the clock more accurately by compensating for communication delays.
+
+6. **Iterative Process**: The time synchronization process may be repeated periodically to ensure that the clocks of all nodes remain synchronized over time. The coordinator may initiate synchronization messages at regular intervals or based on certain triggers.
+
+In summary, Berkeley's Algorithm works by having a designated coordinator node broadcast its local time to all other nodes, which then adjust their clocks based on the received time message. This helps in achieving a more synchronized view of time across the distributed system, which is crucial for coordinating actions and events accurately.
+
+
+
+
+
+
+
+
+
+netstat -ano
+
+Press Ctrl + Shift + Esc to open Task Manager.
+Go to the "Details" tab.
+Look for the PID you noted down earlier in the "PID" column.
+The corresponding application or process name will be listed in the "Name" column.
+
+eg : TCP    0.0.0.0:8080           0.0.0.0:0              LISTENING       6236
